@@ -2,6 +2,7 @@ html {
   font-size: 18px;
   font-family: Helvetica;
   color: white;
+  background-color: black;
 }
 
 h1 {
@@ -18,21 +19,34 @@ h1, h4 {
   text-transform: uppercase;
 }
 
-nav {
-  background-color: firebrick;
+body {
+  background-color: white;
 }
 
-nav ul {
-  margin: 0.75rem;
-  display: flex;
+nav {
+  background-color: firebrick;
 }
 
 footer {
   background-color: black;
 }
 
-.company-identification {
+
+.site-container {
+  width: 960px;
+  margin: 0 auto;
+}
+
+.site-container-left-aligned {
+  width: 960px;
+  margin: 0 auto 0 0;
+}
+
+.company-identification-background{
   background-color: black;
+}
+
+.company-identification {
   text-transform: uppercase;
   display: flex;
   align-items: center;
@@ -48,19 +62,180 @@ footer {
   margin-right: 0rem;
 }
 
-.banner {
+.banner-container {
   height: 25rem;
-  background-image: url("./resources/images/moto.jpg");
+  overflow: hidden;
+  background-image: url("../images/moto.jpg");
+  background-position: center center;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
 }
 
 .banner-card {
   background-color: black;
-  width: 20rem;
+  width: 25rem;
   display: flex;
   flex-direction: column;
   margin-top: 9rem;
 }
 
+.large-screen-menu {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+}
+
+.small-screen-menu {
+  display: none;
+}
+
+.item-grid {
+  display: flex;
+  justify-content: space-between;
+  margin: 3rem 0;
+}
+
+.item {
+  height: 15rem;
+  border: 4px solid black;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;;
+  align-items: center;
+}
+
+.item-image-container {
+  margin: auto 0;
+  max-width: 60%;
+}
+
+.item-img {
+  max-height: 9rem;
+  max-width: 60%;
+  margin: 2rem;
+}
+
+.item-name {
+  background-color: black;
+  width: 100%;
+  text-align: center;
+}
+
+.item-name p {
+  margin: 0.5rem auto;
+}
+
+.store-information-grid {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4rem;
+}
+
+.store-information {
+  display: flex;
+  flex-direction: column;
+  width: 35%;
+}
+
+.store-information-category {
+  background-color: black;
+}
+
+.store-information-category p {
+  padding: 1rem 0 1rem 2rem;
+}
+
+.store-information-data {
+  padding: 0.5rem 0;
+}
+
+.footer-text-container {
+  height: 5rem;
+  width: auto;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+}
+
 .reversed {
   color: black;
+}
+
+@media only screen and (max-width: 1024px) {
+  .large-screen-menu {
+    display: none;
+  }
+
+  .small-screen-menu {
+    display: flex;
+    padding: 0.75rem 0;
+    justify-content: center;
+  }
+
+  .site-container {
+    width: 100%;
+  }
+
+  .third-item {
+    display: none;
+  }
+
+  .item {
+    width: 47%;
+  }
+
+  .store-information {
+    width: 35%;
+  }
+}
+
+@media only screen and (max-width: 675px) {
+  .banner-container {
+    background-size: cover;
+  }
+}
+
+@media only screen and (max-width: 470px) {
+  h1 {
+    font-size: 1rem;
+  }
+
+  h4 {
+    font-size: 0.77rem;
+    margin-top: 1rem;
+    font-weight: bold;
+  }
+
+  .banner-container {
+    height: 15rem;
+  }
+
+  .banner-card {
+    margin-top: 10rem;
+    width: 100%;
+  }
+
+
+  .second-item {
+    display: none;
+  }
+
+  .item-grid {
+    justify-content: center;
+  }
+
+  .store-information-grid {
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto 4rem auto;
+  }
+
+  .store-information {
+    width: 90%;
+  }
+
+  .footer-text-container {
+    align-items: center;
+  }
 }
